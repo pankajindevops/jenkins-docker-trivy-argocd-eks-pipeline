@@ -12,9 +12,22 @@ pipeline {
                 cleanWs()
             }
         }
+
         stage("Checkout from Github Source Control") {
             steps {
-                git branch: 'main', credentialsId: 'github', url:
+                git branch: 'main', credentialsId: 'github', url:'https://github.com/pankajindevops/jenkins-docker-trivy-argocd-eks-pipeline/blob/main/Jenkinsfile'
+            }
+        }
+
+        stage("Build Application") {
+            steps {
+                sh "mvn clean package"
+            }
+        }
+
+        stage("Test the Application") {
+            steps {
+                sh "mvn test"
             }
         }
 }
