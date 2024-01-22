@@ -8,7 +8,7 @@ pipeline {
     }
 
     environment {
-        APP_NAME = "register-app-pipeline"
+        APP_NAME = "jenkins-docker-trivy-argocd-eks-pipeline"
         RELEASE = "1.0.0"
         DOCKER_USER = "pankajdocker0710"
         DOCKER_PASS = "dockerhub"
